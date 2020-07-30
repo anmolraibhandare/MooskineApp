@@ -81,6 +81,7 @@ class NotesListViewController: UIViewController, UITableViewDataSource {
     func addNote() {
 //        TODO: add note
         let note = Note(context: dataController.viewContext)
+        note.attributedText = NSAttributedString(string: "New Note")
         note.creationDate = Date()
         note.notebook = notebook
         try? dataController.viewContext.save()
@@ -119,7 +120,7 @@ class NotesListViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoteCell.defaultReuseIdentifier, for: indexPath) as! NoteCell
 
         // Configure cell
-        cell.textPreviewLabel.text = aNote.text
+        cell.textPreviewLabel.attributedText = aNote.attributedText
         if let creationDate = aNote.creationDate {
             cell.dateLabel.text = dateFormatter.string(from: creationDate)
         }
