@@ -1,4 +1,4 @@
-# MooskineApp
+# Notebook - MooskineApp
 Udacity iOS Nanodegree Project
 
 #### Summary 
